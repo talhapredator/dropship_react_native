@@ -10,7 +10,7 @@ interface Message {
   isUser: boolean;
 }
 
-const API_KEY = "AIzaSyDUpprMFxQxdqOIzrh8NDVyq5za_ttgLH0"; // Replace with your actual API key
+const API_KEY = "GOOGLE_API_KEY"; // Replace with your actual API key
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 const Chatbot = () => {
