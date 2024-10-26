@@ -1,7 +1,7 @@
 
 import axios from 'axios';
 
-const BASE_URL = 'http://192.168.18.5:8080/api/products/category';
+const BASE_URL = 'http://localhost:8080/api/products/category';
 
 export const getProductsByCategory = async (categoryId: number) => {
   try {
@@ -50,7 +50,7 @@ export const getProductsByIds = async (productIds: number[]) => {
   }
 };
 
-const CART_URL = 'http://192.168.18.5:8080/api/cart/current';
+const CART_URL = 'http://localhost:8080/api/cart/current';
 
 export const getCartData = async () => {
   try {
@@ -63,7 +63,7 @@ export const getCartData = async () => {
 };
 
 
-const ADD_URL = 'http://192.168.18.5:8080/api/cart';
+const ADD_URL = 'http://localhost:8080/api/cart';
 
 // Function to add an item to the cart
 export const addItemToCart = async (productId: number, quantity: number = 1) => {
@@ -79,7 +79,7 @@ export const addItemToCart = async (productId: number, quantity: number = 1) => 
   }
 };
 
-const PROFILE_URL = 'http://192.168.18.5:8080/api/profile';
+const PROFILE_URL = 'http://localhost:8080/api/profile';
 
 export const getUserProfile = async () => {
   try {
@@ -123,7 +123,7 @@ export const updateUserProfile = async (profileData: UserProfile): Promise<UserP
 export const createOrder = async (paymentMethod: string) => {
   try {
     const response = await axios.post(
-      `http://192.168.18.5:8080/api/orders/create?paymentMethod=${paymentMethod}`,
+      `http://localhost:8080/api/orders/create?paymentMethod=${paymentMethod}`,
       {},
       { withCredentials: true }
     );
@@ -137,7 +137,7 @@ export const createOrder = async (paymentMethod: string) => {
 // Function to get pricing details
 export const getPricingDetails = async () => {
   try {
-    const response = await axios.get('http://192.168.18.5:8080/api/orders/pricing-details', { withCredentials: true });
+    const response = await axios.get('http://localhost:8080/api/orders/pricing-details', { withCredentials: true });
     return response.data;
   } catch (error) {
     console.error("Error fetching pricing details", error);
@@ -145,7 +145,7 @@ export const getPricingDetails = async () => {
   }
 };
 
-const API_URL = 'http://192.168.18.5:8080/api/orders';
+const API_URL = 'http://localhost:8080/api/orders';
 
 export const fetchOrders = async () => {
   try {
@@ -159,7 +159,7 @@ export const fetchOrders = async () => {
 
 export const handleSearch = async (query: string) => {
   try {
-    const response = await axios.get(`http://192.168.18.5:8080/api/products/search?q=${query}`);
+    const response = await axios.get(`http://localhost:8080/api/products/search?q=${query}`);
     return response.data;  // Ensure you return the data from the response
   } catch (error) {
     console.error("Error fetching search results", error);
