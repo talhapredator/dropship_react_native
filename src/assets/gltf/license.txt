@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ryzen box
+* source:	https://sketchfab.com/3d-models/ryzen-box-b76bff307f8848ceb5ab4ffb93f38bf1
+* author:	matousekfoto (https://sketchfab.com/matousekfoto)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ryzen box" (https://sketchfab.com/3d-models/ryzen-box-b76bff307f8848ceb5ab4ffb93f38bf1) by matousekfoto (https://sketchfab.com/matousekfoto) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

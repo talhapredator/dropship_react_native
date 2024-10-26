@@ -1,118 +1,174 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+const Stack = createNativeStackNavigator();
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import StartScreen from "./src/screens/StartScreen";
+import HomePage from "./src/screens/HomePage";
+import SignUp from "./src/screens/SignUp";
+import LogIn from "./src/screens/LogIn";
+import StyleMainPage from "./src/screens/StyleMainPage";
+import Catagories from "./src/screens/Catagories";
+import Catagories2List from "./src/screens/Catagories2List"
+import ProductList from "./src/screens/ProductList";
+import Ratings from "./src/screens/Ratings";
+import Cart from "./src/screens/Cart";
+import Checkout from "./src/screens/Checkout";
+import PaymentEdit from "./src/screens/PaymentEdit";
+import AddressEdit from "./src/screens/AddressEdit";
+import Success from "./src/screens/Success";
+import Catagories3View from "./src/screens/Catagories3View";
+import Settings from "./src/screens/Settings";
+import MyAccount from "./src/screens/MyAccount";
+import Catagories4Search from "./src/screens/Catagories4Search";
+import Product from "./src/screens/Product";
+import Chatbot from "./src/screens/Chatbot";
+import ThreeD from "./src/screens/ThreeD";
+import OnlinePayment from "./src/screens/OnlinePayment";
+import DeliveryStatusPage from "./src/screens/DeliveryStatusPage";
+import ProductPage from "./src/screens/ProductPage";
+import OrdersList from "./src/screens/OrdersList";
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+const App = () => {
+  const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <>
+      <NavigationContainer>
+        {hideSplashScreen ? (
+          <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen
+              name="StartScreen"
+              component={StartScreen}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="OnlinePayment"
+              component={OnlinePayment}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ThreeD"
+              component={ThreeD}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="DeliveryStatusPage"
+              component={DeliveryStatusPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="OrdersList"
+              component={OrdersList}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="HomePage"
+              component={HomePage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="SignUp"
+              component={SignUp}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="LogIn"
+              component={LogIn}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="StyleMainPage"
+              component={StyleMainPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Catagories"
+              component={Catagories}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Catagories2List"
+              component={Catagories2List}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Ratings"
+              component={Ratings}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Cart"
+              component={Cart}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Checkout"
+              component={Checkout}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Chatbot"
+              component={Chatbot}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="PaymentEdit"
+              component={PaymentEdit}
+              options={{ headerShown: false }}
+            />
+            
+            <Stack.Screen
+              name="AddressEdit"
+              component={AddressEdit}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Success"
+              component={Success}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="MyAccount"
+              component={MyAccount}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Settings"
+              component={Settings}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Catagories4Search"
+              component={Catagories4Search}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Catagories3View"
+              component={Catagories3View}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ProductList"
+              component={ProductList}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="ProductPage"
+              component={ProductPage}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="Product"
+              component={Product}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        ) : null}
+      </NavigationContainer>
+    </>
   );
-}
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
+};
 export default App;

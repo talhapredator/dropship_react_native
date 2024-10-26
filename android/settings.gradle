@@ -2,3 +2,13 @@ rootProject.name = 'view'
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
+
+// Check if Expo is installed and configure autolinking
+def expoPackageFile = new File(["node", "--print", "require.resolve('expo/package.json')"].execute(null, rootDir).text.trim())
+if (expoPackageFile.exists()) {
+    apply from: "$expoPackageFile/../scripts/autolinking.gradle"
+    useExpoModules()
+} else {
+    // Log a warning or handle the absence of Expo modules gracefully
+    println("Expo modules not found. Please ensure that expo and related modules are installed.")
+}
