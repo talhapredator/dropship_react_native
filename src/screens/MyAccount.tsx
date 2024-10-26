@@ -18,7 +18,7 @@ const MyAccount = () => {
   // Function to handle logout confirmation
   const handleLogout = async () => {
     try {
-      await axios.post('http://192.168.18.5:8080/api/auth/logout'); 
+      await axios.post('http://localhost:8080/api/auth/logout'); 
       setModalVisible(false); 
       navigation.navigate('StartScreen'); 
     } catch (error) {
@@ -28,7 +28,7 @@ const MyAccount = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.get('http://192.168.18.5:8080/api/profile');
+      const response = await axios.get('http://localhost:8080/api/profile');
       setUserProfile(response.data);
     } catch (error) {
       console.error('Error fetching user profile:', error);
